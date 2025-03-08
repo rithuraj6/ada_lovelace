@@ -1,0 +1,515 @@
+/* General Styles */
+:root {
+    --primary-color: #9b4f96; /* Purple - representing justice and dignity */
+    --secondary-color: #00a78e; /* Green - representing hope */
+    --accent-color: #ff69b4; /* Pink - representing care and nurture */
+    --text-color: #2c3e50;
+    --light-bg: #fff5fa; /* Light pink background */
+    --gradient-primary: linear-gradient(135deg, #9b4f96, #ff69b4);
+    --gradient-secondary: linear-gradient(135deg, #00a78e, #9b4f96);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    overflow-x: hidden;
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .display-4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+.section-title {
+    position: relative;
+    padding-bottom: 1rem;
+    margin-bottom: 3rem;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--primary-color);
+}
+
+.section-title::before {
+    content: '♀';
+    position: absolute;
+    left: 50%;
+    top: -30px;
+    transform: translateX(-50%);
+    font-size: 24px;
+    color: var(--primary-color);
+}
+
+/* Navigation Styles */
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.navbar-dark.bg-dark {
+    background: var(--gradient-primary) !important;
+}
+
+/* Hero Section Styles */
+.hero-fullwidth {
+    position: relative;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    margin-bottom: 3rem;
+}
+
+.carousel-fullwidth {
+    width: 100%;
+}
+
+.carousel-item {
+    height: 80vh;
+    background-color: #000;
+}
+
+.carousel-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: brightness(0.5);
+}
+
+.carousel-caption {
+    bottom: 20%;
+    padding: 2rem;
+    text-align: left;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+}
+
+.carousel-caption h1 {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    margin-bottom: 1rem;
+    font-size: 4rem;
+    background: linear-gradient(120deg, var(--accent-color) 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: none;
+}
+
+.carousel-caption p {
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    font-weight: 300;
+}
+
+.carousel-caption .btn {
+    text-shadow: none;
+    padding: 1rem 2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.carousel-indicators {
+    bottom: 40px;
+}
+
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 60vh;
+    }
+    
+    .carousel-caption {
+        bottom: 10%;
+        padding: 1rem;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 2.5rem;
+    }
+
+    .carousel-caption p {
+        font-size: 1.1rem;
+    }
+}
+
+/* About Section Styles */
+#about .card {
+    transition: transform 0.3s ease;
+    border: none;
+    background: linear-gradient(145deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+#about .card:hover {
+    transform: translateY(-5px);
+}
+
+#about .card-body {
+    padding: 2.5rem;
+}
+
+#about .card-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+
+#about .card-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--primary-color);
+}
+
+#about .card-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-color);
+}
+
+#about .bi {
+    font-size: 1.2rem;
+}
+
+#about .list-unstyled li {
+    display: flex;
+    align-items: center;
+}
+
+#about .quote-card {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+}
+
+#about .blockquote-footer {
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    #about .card-body {
+        padding: 1.5rem;
+    }
+}
+
+/* Timeline Styles */
+.timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--gradient-primary);
+}
+
+.timeline-item {
+    position: relative;
+    padding-left: 3rem;
+    margin-bottom: 3rem;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-date {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.timeline-content {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.timeline-content h4 {
+    color: var(--secondary-color);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+}
+
+.timeline-content p {
+    color: #666;
+    margin-bottom: 0;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -0.5rem;
+    top: 0.5rem;
+    width: 1rem;
+    height: 1rem;
+    background: var(--accent-color);
+    border-radius: 50%;
+    border: 2px solid var(--primary-color);
+}
+
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 1rem;
+    }
+    
+    .timeline-item {
+        padding-left: 3rem;
+    }
+    
+    .timeline-item::before {
+        left: 0.5rem;
+    }
+}
+
+/* Portfolio Section Styles */
+.bg-gradient {
+    background: linear-gradient(to top, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+}
+
+.bg-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 200px;
+    background: linear-gradient(to bottom, rgba(0,123,255,0.1) 0%, transparent 100%);
+}
+
+.portfolio-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(155, 79, 150, 0.1);
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background: white;
+    border-top: 4px solid var(--primary-color);
+}
+
+.portfolio-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(155, 79, 150, 0.2);
+}
+
+.portfolio-card .card-img-top {
+    height: 250px;
+    object-fit: cover;
+}
+
+.portfolio-card .card-body {
+    padding: 1.5rem;
+}
+
+.portfolio-card .card-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.portfolio-card .card-text {
+    color: #666;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.portfolio-card .badge {
+    padding: 0.6rem 1.2rem;
+    margin-right: 0.5rem;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Achievement Timeline */
+.achievement-timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.achievement-card {
+    margin-bottom: 2rem;
+}
+
+.achievement-card:last-child {
+    margin-bottom: 0;
+}
+
+.achievement-date {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    padding: 0.5rem 1.2rem;
+    border-radius: 25px;
+    font-weight: 600;
+}
+
+/* Modern Recognition Cards */
+.portfolio-card .bi {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Highlight Important Text */
+.highlight {
+    background: linear-gradient(120deg, rgba(0,123,255,0.2) 0%, rgba(0,123,255,0.1) 100%);
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .carousel-item {
+        height: 200px;
+    }
+    
+    .carousel-caption h1 {
+        font-size: 2.5rem;
+    }
+    
+    .carousel-caption p {
+        font-size: 1.1rem;
+    }
+    
+    #about .card-body {
+        padding: 1.5rem;
+    }
+    
+    .timeline-content {
+        padding: 1.5rem;
+    }
+    
+    .portfolio-card .card-title {
+        font-size: 1.3rem;
+    }
+    
+    .achievement-date {
+        position: relative;
+        top: auto;
+        right: auto;
+        display: inline-block;
+        margin-top: 1rem;
+    }
+}
+
+/* Quote Section Styles */
+.quote-card {
+    background: var(--gradient-primary);
+    color: white;
+    overflow: hidden;
+    position: relative;
+}
+
+.quote-card::before {
+    content: '"';
+    position: absolute;
+    top: -20px;
+    left: 20px;
+    font-size: 150px;
+    font-family: 'Playfair Display', serif;
+    opacity: 0.1;
+    color: white;
+}
+
+.quote-card .bi-quote {
+    color: rgba(255, 255, 255, 0.2);
+    margin-bottom: 2rem;
+}
+
+.quote-card .blockquote {
+    position: relative;
+    z-index: 1;
+}
+
+.quote-card .lead {
+    font-size: 1.5rem;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.quote-card .blockquote-footer {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.1rem;
+}
+
+.quote-card .blockquote-footer cite {
+    font-style: normal;
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .quote-card .lead {
+        font-size: 1.2rem;
+    }
+    
+    .quote-card::before {
+        font-size: 100px;
+    }
+}
+
+/* Update button styles */
+.btn-primary {
+    background: var(--gradient-primary);
+    border: none;
+    padding: 0.8rem 2rem;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(155, 79, 150, 0.3);
+}
+
+/* Add empowerment quotes styling */
+.achievement-card .card-body {
+    position: relative;
+    overflow: hidden;
+}
+
+.achievement-card .card-body::before {
+    content: '✨';
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    opacity: 0.5;
+}
+
+/* Update badge styles */
+.badge.bg-primary {
+    background: var(--gradient-primary) !important;
+}
+
+.badge.bg-secondary {
+    background: var(--gradient-secondary) !important;
+}
+  
